@@ -20,6 +20,7 @@
         <nav aria-label="Principal" class="mx-auto flex max-w-4xl gap-6 px-4 py-4">
             <x-nav-link :href="route('home')" :active="request()->routeIs('home')">Início</x-nav-link>
             <x-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.*')">Projetos</x-nav-link>
+            <x-nav-link :href="route('contact.create')" :active="request()->routeIs('contact.*')">Contacto</x-nav-link>
         </nav>
     </header>
 
