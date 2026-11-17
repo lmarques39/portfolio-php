@@ -6,4 +6,26 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-surface: #ffffff;
+    --color-ink: #111827;
+    --color-muted: #4b5563;
+    --color-line: #e5e7eb;
+    --color-brand: #1d4ed8;
+    --color-brand-dark: #1e3a8a;
+    --color-brand-soft: #eff6ff;
+}
+
+@layer base {
+    :focus-visible {
+        outline: 3px solid var(--color-brand);
+        outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
 }
