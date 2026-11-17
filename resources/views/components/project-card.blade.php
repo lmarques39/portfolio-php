@@ -1,11 +1,11 @@
-@props(['project'])
+@props(['project', 'headingLevel' => 2])
 
 <article class="relative flex flex-col rounded-lg border border-line p-6 transition hover:shadow-md focus-within:ring-2 focus-within:ring-brand">
-    <h3 class="text-xl font-semibold">
+    <h{{ $headingLevel }} class="text-xl font-semibold">
         <a href="{{ route('projects.show', $project) }}" class="after:absolute after:inset-0 focus:outline-none">
             {{ $project->title }}
         </a>
-    </h3>
+    </h{{ $headingLevel }}>
 
     <p class="mt-2 text-muted">{{ $project->excerpt }}</p>
 
