@@ -5,12 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\View\View;
 
-class PageController extends Controller
+class ProjectController extends Controller
 {
-    public function home(): View
+    public function index(): View
     {
-        return view('home', [
-            'featuredProjects' => Project::published()->latest()->take(3)->get(),
+        return view('projects.index', [
+            'projects' => Project::published()->latest()->get(),
+        ]);
+    }
+
+    public function show(Project $project): View
+    {
+        abort_unless($project->is_published, 404);
+
+        return view('projects.show', [
+            'project' => $project,
         ]);
     }
 }
