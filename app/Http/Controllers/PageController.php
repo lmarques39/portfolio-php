@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-
+use App\Models\Project;
+use Illuminate\View\View;
 
 class PageController extends Controller
 {
-    public function home() 
+    public function home(): View
     {
         return view('home', [
-            'nome' => 'Luís',
+            'featuredProjects' => Project::published()->latest()->take(3)->get(),
         ]);
     }
 }
-

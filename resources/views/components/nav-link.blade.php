@@ -1,6 +1,6 @@
-@props (['active' => false])
+@props(['active' => false])
 
-<a {{$atributes->class([
+<a {{$attributes->class([
     'rounded underline-offset-4 hover:underline',
     'font-semibold text-brand' => $active,
 ]) }}
